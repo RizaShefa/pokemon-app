@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PokemonDetailPageProps } from 'types/types';
 
-import { getTypeColor } from '@/app/PokemonListingPage';
+import { getTypeColor } from '@/app/components/PokemonListingPage';
 import { usePokemonContext } from '@/context/PokemonContext';
 
 export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
@@ -54,8 +54,22 @@ export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
             ← Back to Pokemon List
           </Link>
 
-          <button onClick={handleFavoriteToggle}>
-            {isFavorite(pokemon.id) ? <p>+</p> : <p>-</p>}
+          <button
+            onClick={handleFavoriteToggle}
+            className={`
+    px-4 py-2 rounded-lg font-medium text-sm
+    transition-all duration-200 ease-out
+    border hover:scale-105 active:scale-95
+    focus:outline-none focus:ring-2 focus:ring-ring
+    z-10
+    ${
+      isFavorite(pokemon.id)
+        ? 'bg-destructive border-destructive text-destructive-foreground hover:bg-destructive/90'
+        : 'bg-primary border-primary text-primary-foreground hover:bg-primary/90'
+    }
+  `}
+          >
+            {isFavorite(pokemon.id) ? 'Remove from Team' : 'Add to Team'}
           </button>
         </div>
 

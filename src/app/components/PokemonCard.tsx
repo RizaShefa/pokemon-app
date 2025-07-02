@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { PokemonCardProps, PokemonType } from 'types/types';
 
-import { getTypeColor } from '@/app/PokemonListingPage';
+import { getTypeColor } from '@/app/components/PokemonListingPage';
 
 const PokemonCard: React.FC<PokemonCardProps> = ({
   pokemon,
@@ -12,17 +12,24 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
 }) => {
   return (
     <Link href={`/${pokemon.id}`} key={pokemon.id}>
-      <div className='bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden relative cursor-pointer'>
+      <div className='bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300  ease-in-out  cursor-pointer'>
         <div className='flex items-center justify-between p-4  '>
           <button
             onClick={(e) => handleFavoriteToggle(pokemon, e)}
-            className=' rounded-full z-10 transition-colors'
+            className={`
+    px-4 py-2 rounded-lg font-medium text-sm
+    transition-all duration-200 ease-out
+    border hover:scale-105 active:scale-95
+    focus:outline-none focus:ring-2 focus:ring-ring
+    z-10
+    ${
+      isFavorite(pokemon.id)
+        ? 'bg-destructive border-destructive text-destructive-foreground hover:bg-destructive/90'
+        : 'bg-primary border-primary text-primary-foreground hover:bg-primary/90'
+    }
+  `}
           >
-            {isFavorite(pokemon.id) ? (
-              <p>Remove from team </p>
-            ) : (
-              <p>Add To Team</p>
-            )}
+            {isFavorite(pokemon.id) ? 'Remove from Team' : 'Add to Team'}
           </button>
 
           <div className=' bg-yellow-400 text-yellow-900 rounded-sm p-1  '>
@@ -30,7 +37,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
           </div>
         </div>
         <div className='p-4'>
-          <div className='flex justify-center items-center min-h-[150px]'>
+          <div className='flex justify-center items-center min-h-[150px] group'>
             <Image
               loading='lazy'
               src={pokemon.sprites?.front_default || '/pokemon-placeholder.png'}

@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import { Pokemon } from 'types/types';
 
-import { PokemonPagination } from '@/app/Pagination';
-import PokemonCard from '@/app/PokemonCard';
+import { PokemonPagination } from '@/app/components/Pagination';
+import PokemonCard from '@/app/components/PokemonCard';
 import { usePokemonContext } from '@/context/PokemonContext';
 
 export default function FavoritesPage() {
-  const { favorites, addFavorite, removeFavorite, isFavorite, error } =
+  const { favorites, addFavorite, removeFavorite, isFavorite } =
     usePokemonContext();
   const [itemsPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);

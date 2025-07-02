@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import { Pokemon } from 'types/types';
 
-import { PokemonPagination } from '@/app/Pagination';
-import PokemonCard from '@/app/PokemonCard';
-import PokemonListHeader from '@/app/PokemonListHeader';
-import SearchBar from '@/app/SearchBar';
+import { PokemonPagination } from '@/app/components/Pagination';
+import PokemonCard from '@/app/components/PokemonCard';
+import PokemonListHeader from '@/app/components/PokemonListHeader';
+import SearchBar from '@/app/components/SearchBar';
 import { usePokemonContext } from '@/context/PokemonContext';
 export function getTypeColor(type: string): string {
   const typeColors: Record<string, string> = {

@@ -4,7 +4,7 @@ import React from 'react';
 import '@/styles/globals.css';
 import '@/styles/colors.css';
 
-import NavBar from '@/app/NavBar';
+import NavBar from '@/app/components/NavBar';
 import { PokemonProvider } from '@/context/PokemonContext';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className='backgroundColor'>
+      <body className='backgroundColor  font-primary'>
         <NavBar />
         <PokemonProvider>{children}</PokemonProvider>
       </body>
