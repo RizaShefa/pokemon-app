@@ -18,7 +18,11 @@ const PokemonCard: React.FC<PokemonCardProps> = ({
             onClick={(e) => handleFavoriteToggle(pokemon, e)}
             className=' rounded-full z-10 transition-colors'
           >
-            {isFavorite(pokemon.id) ? <p>+</p> : <p>-</p>}
+            {isFavorite(pokemon.id) ? (
+              <p>Remove from team </p>
+            ) : (
+              <p>Add To Team</p>
+            )}
           </button>
 
           <div className=' bg-yellow-400 text-yellow-900 rounded-sm p-1  '>

@@ -35,7 +35,7 @@ export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
           </p>
           <Link
             href='/'
-            className='inline-block px-6 py-2 bg-text-purple-600 text-white rounded-lg hover:text-purple-800 transition-colors'
+            className='inline-block h-1  bg-text-purple-600 text-purple-600 rounded-lg hover:text-purple-800 transition-colors'
           >
             Back to Pokemon List
           </Link>
@@ -43,7 +43,6 @@ export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
       </div>
     );
   }
-
   return (
     <div className='p-4'>
       <div className='max-w-2xl mx-auto'>
