@@ -40,17 +40,13 @@ You can also check all of the **details and demos** on my blog post:
 
 - [One-stop Starter to Maximize Efficiency on Next.js & Tailwind CSS Projects](https://theodorusclarence.com/blog/one-stop-starter)
 
-## Getting Started
+## 1. Getting Started
 
 Clone this template
 
-1. Use this repository as template
-
-   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
-
-   I'll appreciate if you do, so this template can be known by others too 😄
-
-   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
+```bash
+git clone https://github.com/RizaShefa/pokemon-app.git
+```
 
 ### 2. Install dependencies
 
